@@ -11,7 +11,7 @@ module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "./dist"),
-        filename: production ? '[name].[contenthash].js' : '[name].js',
+        filename: production ? '[name].[contenthash].js' : '[name].js'
     },
     module: {
         rules: [
@@ -62,8 +62,9 @@ module.exports = {
         }),
     ],
     devServer: {
-        port: 3001,
+        port: 3000,
         hot: true,
+        historyApiFallback: true,
     },
     mode: production ? 'production' : 'development'
 };

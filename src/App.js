@@ -4,11 +4,11 @@ import Router from './router';
 import { routes } from './router/config';
 
 const App = () => {
-  return (
-    <MainLayout>
-      <Router routes={routes} />
-    </MainLayout>
-  )
-}
+    return (
+        <MainLayout>
+            <Router routes={routes} />
+        </MainLayout>
+    );
+};
 
 export default App;

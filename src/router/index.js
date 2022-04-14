@@ -13,6 +13,6 @@ const Router = ({ routes }) => {
 };
 Router.propTypes = {
     route: PropTypes.arrayOf(PropTypes.object)
-}
+};
 
 export default Router;

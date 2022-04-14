@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 150px;
+    justify-content: space-between;
+    background-color: rgb(198, 209, 255);
+    padding: 0 10px;
+    border-radius: 6px;
+}
+.button {
+    cursor: pointer;
+}
+.activeCardButton {
+    border: 1px solid rgb(3, 20, 255);
+    padding: 2px;
+}
+.activeListButton {
+    border: 1px solid rgb(3, 20, 255);
+    padding: 2px;
+}

@@ -1,0 +1,46 @@
+.wrapper {
+    width: 300px;
+    height: 300px;
+    border-radius: 6px;
+    position: relative;
+    background-color: transparent;
+    border: 1px solid rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 300ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        transition: all 200ms ease-in-out;
+        background-color: rgb(213, 227, 255);
+    }
+}
+.movieImg {
+    width: auto;
+    height: 150px;
+    border-radius: 6px;
+}
+.infoWrapper {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.infoText {
+    font-size: 14px;
+    color: black
+}
+.starIcon {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    cursor: pointer;
+}
+.name {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: center;
+    margin-bottom: 5px;
+}

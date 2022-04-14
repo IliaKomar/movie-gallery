@@ -1,0 +1,66 @@
+.wrapper {
+    max-width: 800px;
+    width: 100%;
+    height: 150px;
+    border-radius: 6px;
+    position: relative;
+    background-color: transparent;
+    border: 1px solid rgb(0, 0, 0);
+    transition: background-color 300ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        transition: all 200ms ease-in-out;
+        background-color: rgb(213, 227, 255);
+    };
+    padding-left: 20px;
+}
+.contentWrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.content {
+    width: 100%;
+    margin: 0 20px;
+}
+.movieImg {
+    width: auto;
+    height: 100px;
+    border-radius: 6px;
+}
+.starIcon {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    cursor: pointer;
+}
+.nameWithYearWrapper {
+    display: flex;
+    margin-bottom: 10px;
+}
+.text {
+    font-size: 14px;
+    color: black
+}
+.name {
+    margin-right: 30px;
+}
+.description {
+    margin-bottom: 10px;
+}
+.genresWrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.genreBlock {
+    min-width: max-content;
+    width: 80px;
+    border-radius: 6px;
+    padding: 5px;
+    background-color: white;
+}
+.genre {
+    font-weight: 500;
+    text-align: center;
+}
