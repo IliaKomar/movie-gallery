@@ -13,8 +13,8 @@ const ModalWindow = ({ activeMovieId, handleCloseModal, handleAddToFavourite }) 
         fetch(`https://my-json-server.typicode.com/moviedb-tech/movies/list/${activeMovieId}`)
             .then(res => res.json())
             .then(data => setData(data))
-            .catch(e => { });
-    }, []);
+            .catch(() => { });
+    }, [activeMovieId]);
     return (
         <div className={styles.modal} onClick={handleCloseModal}>
             <div className={styles.modalContent} onClick={e => e.stopPropagation()} >
@@ -72,7 +72,8 @@ const ModalWindow = ({ activeMovieId, handleCloseModal, handleAddToFavourite }) 
 };
 ModalWindow.propTypes = {
     activeMovieId: PropTypes.number,
-    setIsModalOpened: PropTypes.func
+    handleCloseModal: PropTypes.func,
+    handleAddToFavourite: PropTypes.func
 };
 
 export default ModalWindow;

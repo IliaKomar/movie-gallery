@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useRef } from 'react';
+import { useEffect, useReducer, useRef } from 'react';
 
 function useFetch(url) {
     const cache = useRef({});

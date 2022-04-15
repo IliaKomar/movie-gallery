@@ -21,13 +21,11 @@
     "import/named": "error",
     "react/no-typos": "error",
     "react/no-unused-state": "error",
-    "react/jsx-no-bind": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-uses-react": 1,
     "react/react-in-jsx-scope": "off",
     "array-callback-return": "error",
-    "consistent-return": "error",
     "babel/no-invalid-this": "error",
     "no-unused-vars": "error",
     "no-console": "error"
