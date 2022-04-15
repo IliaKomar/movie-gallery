@@ -8,6 +8,15 @@
     position: fixed;
     z-index: 1;
 }
+
+.navButton {
+    position: absolute;
+    color: white;
+    font-weight: 600;
+    bottom: 14px;
+    left: 30px;
+    cursor: pointer;
+}
 .header {
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

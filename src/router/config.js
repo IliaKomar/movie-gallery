@@ -1,5 +1,5 @@
 import Home from '../pages/Home';
-import Favorite from '../pages/Favorite';
+import Favorites from '../pages/Favorites';
 
 export const routes = [
     {
@@ -9,7 +9,7 @@ export const routes = [
     },
     {
         path: '/favorites',
-        component: <Favorite />,
+        component: <Favorites />,
         id: 'favorite'
     }
 ];

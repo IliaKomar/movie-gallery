@@ -14,8 +14,11 @@
     padding: 20px;
     border-radius: 8px;
     background-color: white;
-    width: 50%;
+    width: 60vw;
     min-height: 500px;
+    @media (max-width: 1000px) {
+        width: 80vw;
+    }
 }
 
 .movieImg {
@@ -42,6 +45,9 @@
 }
 .name {
     margin-bottom: 10px;
+    @media (max-width: 1089px) {
+        text-align: center;
+    }
 }
 .text {
     font-size: 14px;
@@ -59,10 +65,14 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     margin-top: 30px;
-    align-items: center;
 
     @media (max-width: 1089px) {
         grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        grid-gap: 10px;
     }
 }
 
@@ -70,6 +80,7 @@
     width: 80px;
     border-radius: 6px;
     padding: 6px;
+    height: 2em;
     background-color: rgb(71, 71, 71);
 }
 
@@ -81,9 +92,13 @@
 }
 
 .starring {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5em;
     width: 100px;
     border-radius: 6px;
-    padding: 5px;
+    height: 3em;
     background-color: rgb(71, 71, 71);
 }
 

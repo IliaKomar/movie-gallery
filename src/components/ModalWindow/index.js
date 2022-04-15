@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -6,15 +6,21 @@ import StarOutlinedIcon from '../../images/star-outlined.svg';
 import StarIcon from '../../images/star.svg';
 
 import styles from './styles.module.scss';
+import checkIsLocalStorageItem from '../../utils/checkIsLocalStorageItem';
+import { FavoritesContext } from '../../context/favorites';
 
-const ModalWindow = ({ activeMovieId, handleCloseModal, handleAddToFavourite }) => {
+const ModalWindow = ({ activeMovieId, handleCloseModal, handleAddToFavorites, handleRemoveFromFavorites }) => {
     const [data, setData] = useState(null);
+    const movies = useContext(FavoritesContext);
+    
     useEffect(() => {
         fetch(`https://my-json-server.typicode.com/moviedb-tech/movies/list/${activeMovieId}`)
             .then(res => res.json())
             .then(data => setData(data))
             .catch(() => { });
     }, [activeMovieId]);
+
+    const isAdded = checkIsLocalStorageItem(movies, activeMovieId);
     return (
         <div className={styles.modal} onClick={handleCloseModal}>
             <div className={styles.modalContent} onClick={e => e.stopPropagation()} >
@@ -22,7 +28,11 @@ const ModalWindow = ({ activeMovieId, handleCloseModal, handleAddToFavourite }) 
                     data
                         ? (
                             <div className={styles.contentWrapper}>
-                                <img src={StarOutlinedIcon} alt='star-icon' className={styles.starIcon} onClick={handleAddToFavourite(data.id)} />
+                                <img
+                                    src={isAdded ? StarIcon : StarOutlinedIcon}
+                                    alt='star-icon'
+                                    className={styles.starIcon}
+                                    onClick={isAdded ? handleRemoveFromFavorites(data.id) : handleAddToFavorites(data)} />
                                 <div className={styles.mainContentAtTheTop}>
                                     <div>
                                         <img src={data.img} className={styles.movieImg} />
@@ -73,7 +83,9 @@ const ModalWindow = ({ activeMovieId, handleCloseModal, handleAddToFavourite }) 
 ModalWindow.propTypes = {
     activeMovieId: PropTypes.number,
     handleCloseModal: PropTypes.func,
-    handleAddToFavourite: PropTypes.func
+    handleAddToFavorites: PropTypes.func,
+    isAdded: PropTypes.bool,
+    handleRemoveFromFavorites: PropTypes.func
 };
 
 export default ModalWindow;

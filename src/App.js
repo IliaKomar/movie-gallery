@@ -2,12 +2,15 @@ import React from 'react';
 import MainLayout from './layouts/MainLayout';
 import Router from './router';
 import { routes } from './router/config';
+import { FavoritesProvider } from "./context/favorites";
 
 const App = () => {
     return (
-        <MainLayout>
-            <Router routes={routes} />
-        </MainLayout>
+        <FavoritesProvider>
+            <MainLayout>
+                <Router routes={routes} />
+            </MainLayout>
+        </FavoritesProvider>
     );
 };
 

@@ -7,10 +7,14 @@ import StarOutlinedIcon from '../../images/star-outlined.svg';
 
 import styles from './styles.module.scss';
 
-const CardItem = ({ img, name, year, handleOpenModal, handleAddToFavourite }) => {
+const CardItem = ({ img, name, year, handleOpenModal, handleAddToFavorites, handleRemoveFromFavorites, isAddedMovie }) => {
     return (
         <div className={styles.wrapper} onClick={handleOpenModal}>
-            <img src={StarOutlinedIcon} alt='star-icon' className={styles.starIcon} onClick={handleAddToFavourite} />
+            <img
+                src={isAddedMovie ? StarIcon : StarOutlinedIcon}
+                alt='star-icon'
+                className={styles.starIcon}
+                onClick={isAddedMovie ? handleRemoveFromFavorites : handleAddToFavorites} />
             <div className={styles.overlay}>
                 <img src={img} alt='movie-img' className={styles.movieImg} />
             </div>
@@ -31,7 +35,9 @@ CardItem.propTypes = {
     name: PropTypes.string,
     year: PropTypes.number,
     handleOpenModal: PropTypes.func,
-    handleAddToFavourite: PropTypes.func
+    handleAddToFavorites: PropTypes.func,
+    handleRemoveFromFavorites: PropTypes.func,
+    isAddedMovie: PropTypes.bool
 };
 
 export default CardItem;

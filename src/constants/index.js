@@ -5,5 +5,6 @@ export const DISPLAY_TYPES = {
 
 export const LOCAL_STORAGE_KEYS = {
     GENRE: 'GENRE',
-    VIEW: 'VIEW'
+    VIEW: 'VIEW',
+    FAVORITE_MOVIES: 'FAVORITE_MOVIES'
 };
