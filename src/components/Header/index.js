@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useNavigate } from 'react-router-dom';
-import FavoritesIcon from '../../images/favorites.svg';
+import FavoritesIcon from '../../assets/favorites.svg';
 
 import styles from './styles.module.scss';
 
@@ -27,7 +27,7 @@ const Header = ({ showFavorites }) => {
             {
                 showFavorites &&
                 <Link to='/favorites'>
-                    <img src={FavoritesIcon} className={styles.favoriteImg} />
+                    <FavoritesIcon className={styles.favoriteImg} />
                 </Link>
             }
         </header >

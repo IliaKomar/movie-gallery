@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import classNames from 'classnames';
 import Header from '../../components/Header';
 
-import CrossIcon from '../../images/cross.svg';
+import CrossIcon from '../../assets/cross.svg';
 
 import { dispatchMovies, FavoritesContext, favoritesActions } from '../../context/favorites';
 
@@ -22,11 +22,9 @@ const Favorites = () => {
                         return (
                             <div className={styles.favoriteMovieWrapper} key={id}>
                                 <div className={styles.contentWrapper}>
-                                    <img
-                                        src={CrossIcon}
-                                        alt='star-icon'
-                                        className={styles.crossIcon}
-                                        onClick={handleRemoveMovie(id)} />
+                                    <div onClick={handleRemoveMovie(id)}>
+                                        <CrossIcon  className={styles.crossIcon}/>
+                                    </div>
                                     <div className={styles.overlay}>
                                         <img src={img} alt='movie-img' className={styles.movieImg} />
                                     </div>

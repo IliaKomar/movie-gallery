@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { LOCAL_STORAGE_KEYS, DISPLAY_TYPES } from '../../constants';
 
-import ListIcon from '../../images/list.svg';
-import CardIcon from '../../images/card.svg';
+import ListIcon from '../../assets/list.svg';
+import CardIcon from '../../assets/card.svg';
 
 import styles from './styles.module.scss';
 
@@ -17,16 +17,16 @@ const DisplayTool = ({ setTypeView, isCardView }) => {
     return (
         <div className={styles.wrapper}>
             <div>View as:</div>
-            <img
-                src={CardIcon}
+            <div
                 onClick={handleChangeMoviesView(DISPLAY_TYPES.CARD)}
-                className={classNames(styles.button, { [styles.activeCardButton]: isCardView })}
-            />
-            <img
-                src={ListIcon}
+            >
+                <CardIcon className={classNames(styles.button, { [styles.activeCardButton]: isCardView })}/>
+            </div>
+            <div
                 onClick={handleChangeMoviesView(DISPLAY_TYPES.LIST)}
-                className={classNames(styles.button, { [styles.activeListButton]: !isCardView })}
-            />
+            >
+                <ListIcon className={classNames(styles.button, { [styles.activeListButton]: !isCardView })} />
+            </div>
         </div>
     );
 };

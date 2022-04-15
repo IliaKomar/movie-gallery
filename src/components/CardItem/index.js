@@ -2,19 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import StarIcon from '../../images/star.svg';
-import StarOutlinedIcon from '../../images/star-outlined.svg';
+import StarIcon from '../../assets/star.svg';
+import StarOutlinedIcon from '../../assets/star-outlined.svg';
 
 import styles from './styles.module.scss';
 
 const CardItem = ({ img, name, year, handleOpenModal, handleAddToFavorites, handleRemoveFromFavorites, isAddedMovie }) => {
     return (
         <div className={styles.wrapper} onClick={handleOpenModal}>
-            <img
-                src={isAddedMovie ? StarIcon : StarOutlinedIcon}
-                alt='star-icon'
-                className={styles.starIcon}
-                onClick={isAddedMovie ? handleRemoveFromFavorites : handleAddToFavorites} />
+            <div onClick={isAddedMovie ? handleRemoveFromFavorites : handleAddToFavorites}>
+                {
+                    isAddedMovie
+                    ? <StarIcon className={styles.starIcon} />
+                    : <StarOutlinedIcon className={styles.starIcon} />
+                }
+            </div>
             <div className={styles.overlay}>
                 <img src={img} alt='movie-img' className={styles.movieImg} />
             </div>

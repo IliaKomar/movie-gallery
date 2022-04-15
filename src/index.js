@@ -13,8 +13,3 @@ root.render(
         </BrowserRouter>
     </React.StrictMode>
 );
-
-const devMode = process.env.NODE_ENV === 'development';
-if (devMode && module && module.hot) {
-    module.hot.accept();
-}

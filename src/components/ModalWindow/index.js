@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import StarOutlinedIcon from '../../images/star-outlined.svg';
-import StarIcon from '../../images/star.svg';
+import StarOutlinedIcon from '../../assets/star-outlined.svg';
+import StarIcon from '../../assets/star.svg';
 
 import styles from './styles.module.scss';
 import checkIsLocalStorageItem from '../../utils/checkIsLocalStorageItem';
