@@ -12,7 +12,7 @@ import { FavoritesContext } from '../../context/favorites';
 const ModalWindow = ({ activeMovieId, handleCloseModal, handleAddToFavorites, handleRemoveFromFavorites }) => {
     const [data, setData] = useState(null);
     const movies = useContext(FavoritesContext);
-    
+
     useEffect(() => {
         fetch(`https://my-json-server.typicode.com/moviedb-tech/movies/list/${activeMovieId}`)
             .then(res => res.json())
@@ -28,11 +28,13 @@ const ModalWindow = ({ activeMovieId, handleCloseModal, handleAddToFavorites, ha
                     data
                         ? (
                             <div className={styles.contentWrapper}>
-                                <img
-                                    src={isAdded ? StarIcon : StarOutlinedIcon}
-                                    alt='star-icon'
-                                    className={styles.starIcon}
-                                    onClick={isAdded ? handleRemoveFromFavorites(data.id) : handleAddToFavorites(data)} />
+                                <div onClick={isAdded ? handleRemoveFromFavorites(data.id) : handleAddToFavorites(data)}>
+                                    {
+                                        isAdded
+                                            ? <StarIcon className={styles.starIcon} />
+                                            : <StarOutlinedIcon className={styles.starIcon} />
+                                    }
+                                </div>
                                 <div className={styles.mainContentAtTheTop}>
                                     <div>
                                         <img src={data.img} className={styles.movieImg} />
