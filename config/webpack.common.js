@@ -10,11 +10,11 @@ module.exports = {
   output: {
     path: paths.build,
     filename: '[name].bundle.js',
-    publicPath: '/',
-  },
+    publicPath: '/'
+    },
   plugins: [
     new CleanWebpackPlugin(),
-
+  
     new MiniCssExtractPlugin({
       filename: 'styles/[name].[contenthash].css',
       chunkFilename: '[id].[contenthash].css',
