@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://iliakomar.github.io/movie-gallery",
+  "homepage": "https://iliakomar.github.io/movie-gallery-komar-16.04",
   "scripts": {
     "test": "jest",
     "start": "webpack serve --config config/webpack.dev.js",
