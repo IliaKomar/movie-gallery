@@ -1,15 +1,14 @@
-import Home from '../pages/Home';
-import Favorites from '../pages/Favorites';
+import { lazy } from "react";
 
 export const routes = [
     {
         path: '/',
-        component: <Home />,
+        element: lazy(() => import('../pages/Home')),
         id: 'home'
     },
     {
         path: '/favorites',
-        component: <Favorites />,
+        element: lazy(() => import('../pages/Favorites')),
         id: 'favorite'
     }
 ];

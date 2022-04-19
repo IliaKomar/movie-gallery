@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { Routes, Route } from 'react-router-dom';
 
 const Router = ({ routes }) => {
     return (
         <Routes>
-            {routes.map((route) => (
-                <Route key={route.id} path={route.path} element={route.component} />
+            {routes.map(({ id, path, element: Element }) => (
+                <Route
+                    key={id}
+                    path={path}
+                    element={
+                        <Suspense>
+                            <Element />
+                        </Suspense>
+                    }
+                />
             ))}
         </Routes>
     );
